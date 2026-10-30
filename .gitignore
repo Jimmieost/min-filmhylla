@@ -1,0 +1,8 @@
+# Movie backups and local credentials must never be published.
+min-filmhylla-*.json
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+node_modules/

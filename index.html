@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Din egen lilla filmvärld. Spara filmer, sätt betyg och minns vad du tyckte. En privat filmdagbok på din enhet.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://image.tmdb.org; connect-src 'self' https://api.themoviedb.org; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>Min Filmhylla · Din egen lilla filmvärld</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Hoppa till innehållet</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="#/collection" aria-label="Min Filmhylla, startsida"><span class="brand-icon" aria-hidden="true">▥</span> Min Filmhylla<span class="brand-dot">.</span></a>
+    <nav class="navigation" aria-label="Huvudmeny">
+      <a href="#/collection" data-nav="collection"><svg><use href="./assets/icons/sprite.svg#library"></use></svg><span>Min samling</span></a>
+      <a href="#/search" data-nav="search"><svg><use href="./assets/icons/sprite.svg#search"></use></svg><span>Sök filmer</span></a>
+      <a href="#/stats" data-nav="stats"><svg><use href="./assets/icons/sprite.svg#chart"></use></svg><span>Statistik</span></a>
+      <a href="#/settings" data-nav="settings"><svg><use href="./assets/icons/sprite.svg#settings"></use></svg><span>Inställningar</span></a>
+    </nav>
+    <span class="local-badge"><span></span> Bara din. Bara här.</span>
+  </div></header>
+  <div id="connection" class="connection" role="status" hidden>Du är offline. Din sparade filmhylla fungerar som vanligt.</div>
+  <div id="update-banner" class="update-banner" hidden><span>En ny version finns. Spara dina ändringar först.</span><button id="update-app" class="button button-small">Uppdatera appen</button></div>
+  <main id="main" class="main" tabindex="-1"><p class="loading" role="status">Öppnar din filmhylla…</p></main>
+  <footer class="site-footer"><span>En plats för filmerna som stannar kvar.</span><span><svg><use href="./assets/icons/sprite.svg#lock"></use></svg> Sparas lokalt på din enhet</span></footer>
+  <div id="toasts" class="toasts" role="status" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title"><form method="dialog"><div class="dialog-icon">!</div><h2 id="confirm-title"></h2><p id="confirm-description"></p><label id="confirm-label" hidden>Skriv RADERA för att bekräfta<input id="confirm-input" autocomplete="off" spellcheck="false"></label><div class="dialog-actions"><button value="cancel" class="button button-secondary" autofocus>Avbryt</button><button id="confirm-action" value="confirm" class="button">Bekräfta</button></div></form></dialog>
+  <noscript><div class="noscript">Aktivera JavaScript för att använda filmdagboken. Appen lagrar filmer lokalt i din webbläsare.</div></noscript>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
